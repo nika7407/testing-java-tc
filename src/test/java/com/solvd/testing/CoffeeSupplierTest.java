@@ -52,9 +52,9 @@ public class CoffeeSupplierTest {
     @Test
     public void testSupplierCreation() {
         CoffeeSupplier supplier = new CoffeeSupplier("beans", 100, 25.0);
-        assertEquals(supplier.getName(), "beans");
-        assertEquals(supplier.getBeansStock(), 100);
-        assertEquals(supplier.getPricePerKilo(), 25.0);
+        assertEquals(supplier.getName(), "beans", "name mismatch");
+        assertEquals(supplier.getBeansStock(), 100, "stock mismatch");
+        assertEquals(supplier.getPricePerKilo(), 25.0, "price mismatch");
         log.info("supplier created");
     }
 
@@ -62,8 +62,8 @@ public class CoffeeSupplierTest {
     public void testOrderBeansSuccess() {
         CoffeeSupplier supplier = new CoffeeSupplier("test", 50, 20.0);
         boolean result = supplier.orderBeans(30);
-        assertTrue(result);
-        assertEquals(supplier.getBeansStock(), 20);
+        assertTrue(result, "order should succeed");
+        assertEquals(supplier.getBeansStock(), 20, "stock after order");
         log.info("beans ordered successfully");
     }
 
@@ -73,8 +73,8 @@ public class CoffeeSupplierTest {
 
         boolean result = supplier.orderBeans(20);
 
-        assertFalse(result);
-        assertEquals(supplier.getBeansStock(), 15);
+        assertFalse(result, "order should fail");
+        assertEquals(supplier.getBeansStock(), 15, "stock unchanged");
         log.warn("bean order failed");
     }
 
@@ -82,7 +82,7 @@ public class CoffeeSupplierTest {
     public void testReceiveShipment() {
         CoffeeSupplier supplier = new CoffeeSupplier("shipment", 40, 22.0);
         supplier.receiveShipment(60);
-        assertEquals(supplier.getBeansStock(), 100);
+        assertEquals(supplier.getBeansStock(), 100, "stock after shipment");
         log.info("shipment received");
     }
 
@@ -91,7 +91,7 @@ public class CoffeeSupplierTest {
         CoffeeSupplier supplier = new CoffeeSupplier("cost", 100, 30.0);
         double cost = supplier.calculateCost(5);
 
-        assertEquals(cost, 150.0);
+        assertEquals(cost, 150.0, "cost mismatch");
         log.info("cost calculated");
     }
 }

@@ -51,8 +51,8 @@ public class CheckoutTest {
     public void testEmptyCheckout() {
         Checkout checkout = new Checkout();
         log.debug("checking empty checkout");
-        assertEquals(checkout.getTotal(), 0.0);
-        assertEquals(checkout.getItemCount(), 0);
+        assertEquals(checkout.getTotal(), 0.0, "total mismatch");
+        assertEquals(checkout.getItemCount(), 0, "item count mismatch");
         log.info("empty checkout verified");
     }
 
@@ -62,8 +62,8 @@ public class CheckoutTest {
         log.debug("adding single item");
 
         checkout.addItem(3.50);
-        assertEquals(checkout.getTotal(), 3.50);
-        assertEquals(checkout.getItemCount(), 1);
+        assertEquals(checkout.getTotal(), 3.50, "total after item");
+        assertEquals(checkout.getItemCount(), 1, "item count after");
         log.info("single item added");
     }
 
@@ -75,8 +75,8 @@ public class CheckoutTest {
         log.debug("cancelling order");
 
         checkout.cancelOrder();
-        assertEquals(checkout.getTotal(), 0.0);
-        assertEquals(checkout.getItemCount(), 0);
+        assertEquals(checkout.getTotal(), 0.0, "total after cancel");
+        assertEquals(checkout.getItemCount(), 0, "item count after");
         log.info("order cancelled");
     }
 
@@ -89,7 +89,7 @@ public class CheckoutTest {
         checkout.addItem(1.50);
         checkout.processPayment(2.00);
         int secondOrder = checkout.getOrderNumber();
-        assertEquals(secondOrder, firstOrder + 1);
+        assertEquals(secondOrder, firstOrder + 1, "order number mismatch");
         log.info("order number incremented");
     }
 
@@ -102,7 +102,7 @@ public class CheckoutTest {
         checkout.addItem(4.50);
         checkout.addItem(2.50);
         checkout.processPayment(10.00);
-        assertEquals(checkout.getOrderNumber(), 3);
+        assertEquals(checkout.getOrderNumber(), 3, "order number wrong");
         log.info("transactions completed");
     }
 

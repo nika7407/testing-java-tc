@@ -75,7 +75,10 @@
                 <version>3.5.4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/suite/cofeeTestSuite.xml</suiteXmlFile>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFile>${test.CoffeeSuite}</suiteXmlFile>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFile>${test.FinantialSuite}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

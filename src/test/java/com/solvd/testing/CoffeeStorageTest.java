@@ -40,10 +40,10 @@ public class CoffeeStorageTest {
     @Test
     public void testEmptyStorage() {
         CoffeeStorage storage = new CoffeeStorage();
-        assertEquals(storage.getBeansKg(), 0);
-        assertEquals(storage.getWaterLiters(), 0);
-        assertEquals(storage.getMilkLiters(), 0);
-        assertEquals(storage.getCups(), 0);
+        assertEquals(storage.getBeansKg(), 0, "beans mismatch");
+        assertEquals(storage.getWaterLiters(), 0, "water mismatch");
+        assertEquals(storage.getMilkLiters(), 0, "milk mismatch");
+        assertEquals(storage.getCups(), 0, "cups mismatch");
         log.info("empty storage verified");
     }
 
@@ -52,8 +52,8 @@ public class CoffeeStorageTest {
         CoffeeStorage storage = new CoffeeStorage();
         storage.addBeans(10);
         boolean result = storage.takeBeans(5);
-        assertTrue(result);
-        assertEquals(storage.getBeansKg(), 5);
+        assertTrue(result, "take should succeed");
+        assertEquals(storage.getBeansKg(), 5, "beans after take");
         log.info("beans taken successfully");
     }
 
@@ -62,8 +62,8 @@ public class CoffeeStorageTest {
         CoffeeStorage storage = new CoffeeStorage();
         storage.addBeans(3);
         boolean result = storage.takeBeans(5);
-        assertFalse(result);
-        assertEquals(storage.getBeansKg(), 3);
+        assertFalse(result, "take should fail");
+        assertEquals(storage.getBeansKg(), 3, "beans unchanged");
         log.warn("beans take failed - insufficient stock");
     }
 
@@ -73,9 +73,9 @@ public class CoffeeStorageTest {
         storage.addCups(10);
         boolean first = storage.takeCup();
         boolean second = storage.takeCup();
-        assertTrue(first);
-        assertTrue(second);
-        assertEquals(storage.getCups(), 8);
+        assertTrue(first, "first cup failed");
+        assertTrue(second, "second cup failed");
+        assertEquals(storage.getCups(), 8, "cups after take");
         log.info("cups taken successfully");
     }
 
@@ -86,10 +86,10 @@ public class CoffeeStorageTest {
         storage.addWater(20);
         storage.addMilk(10);
         storage.addCups(50);
-        assertEquals(storage.getBeansKg(), 5);
-        assertEquals(storage.getWaterLiters(), 20);
-        assertEquals(storage.getMilkLiters(), 10);
-        assertEquals(storage.getCups(), 50);
+        assertEquals(storage.getBeansKg(), 5, "beans after add");
+        assertEquals(storage.getWaterLiters(), 20, "water after add");
+        assertEquals(storage.getMilkLiters(), 10, "milk after add");
+        assertEquals(storage.getCups(), 50, "cups after add");
         log.info("all supplies added");
     }
 }

@@ -52,9 +52,9 @@ public class CustomerTest {
     @Test
     public void testCustomerCreation() {
         Customer customer = new Customer("john", 50.0);
-        assertEquals(customer.getName(), "john");
-        assertEquals(customer.getWallet(), 50.0);
-        assertEquals(customer.getVisits(), 0);
+        assertEquals(customer.getName(), "john", "name mismatch");
+        assertEquals(customer.getWallet(), 50.0, "wallet mismatch");
+        assertEquals(customer.getVisits(), 0, "visits mismatch");
         log.info("customer created");
     }
 
@@ -62,9 +62,9 @@ public class CustomerTest {
     public void testMakePurchaseSuccess() {
         Customer customer = new Customer("nika", 30.0);
         boolean result = customer.makePurchase(15.0);
-        assertTrue(result);
-        assertEquals(customer.getWallet(), 15.0);
-        assertEquals(customer.getVisits(), 1);
+        assertTrue(result, "purchase should succeed");
+        assertEquals(customer.getWallet(), 15.0, "wallet after purchase");
+        assertEquals(customer.getVisits(), 1, "visits after purchase");
         log.info("purchase successful");
     }
 
@@ -72,9 +72,9 @@ public class CustomerTest {
     public void testMakePurchaseFail() {
         Customer customer = new Customer("gio", 10.0);
         boolean result = customer.makePurchase(20.0);
-        assertFalse(result);
-        assertEquals(customer.getWallet(), 10.0);
-        assertEquals(customer.getVisits(), 0);
+        assertFalse(result, "purchase should fail");
+        assertEquals(customer.getWallet(), 10.0, "wallet unchanged");
+        assertEquals(customer.getVisits(), 0, "visits unchanged");
         log.warn("purchase failed");
     }
 
@@ -82,7 +82,7 @@ public class CustomerTest {
     public void testAddMoney() {
         Customer customer = new Customer("mako", 25.0);
         customer.addMoney(15.0);
-        assertEquals(customer.getWallet(), 40.0);
+        assertEquals(customer.getWallet(), 40.0, "wallet after add");
         log.info("money added");
     }
 
@@ -92,7 +92,7 @@ public class CustomerTest {
         customer.visitShop();
         customer.visitShop();
         customer.visitShop();
-        assertEquals(customer.getVisits(), 3);
+        assertEquals(customer.getVisits(), 3, "shop visits count");
         log.info("shop visits counted");
     }
 }
