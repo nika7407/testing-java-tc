@@ -1,0 +1,34 @@
+Test Case ID: test_case_set_primary_email_visibility_for_auth_user_#1
+
+Test Priority: check if the method will function as intended and set primary email visibility
+
+Prerequisites:
+1. The fine-grained token must have "Email addresses" user permissions (write)
+2. User must have at least one verified email address
+
+Test Steps:
+Send PATCH request to https://api.github.com/user/email/visibility
+
+Expected Result:
+1. Response status code 200 OK
+2. Response contains updated email object with changed visibility
+3. Response structure matches expected JSON schema
+
+Response Example:
+[
+  {
+    "email": "octocat@github.com",
+    "primary": true,
+    "verified": true,
+    "visibility": "private"
+  }
+]
+
+Actual Response Possibilities:
+1. Positive case: Status 200 with updated email object showing new visibility
+2. Missing authentication: Status 401 (Requires authentication)
+3. Insufficient permissions: Status 403 (Forbidden)
+4. Invalid visibility value: Status 422, nothing to change (Validation failed)
+5. No verified primary email: Status 404 (Resource not found)
+
+Status: Success

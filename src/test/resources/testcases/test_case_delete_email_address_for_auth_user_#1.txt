@@ -1,0 +1,32 @@
+Test Case ID: test_case_delete_email_address_for_auth_user_#1
+
+Test Priority:tests successful deletion of email addresses
+
+Prerequisites:
+1. The fine-grained token must have "Email addresses" user permissions (write)
+2. User must be authenticated
+3. Email addresses must exist in the user's account and User must have at least one other email address remaining (cannot delete all emails)
+
+Test Steps:
+Send DELETE request to https://api.github.com/user/emails
+and Include request body with emails array containing one or more email addresses to delete
+   Example body: {"emails": ["oldemail@example.com", "anotheremail@example.com"]}
+
+Expected Result:
+1. Response status code 204 No Content
+2. Response body is empty (no content)
+3. Email addresses are successfully removed from user account
+
+Response Example:
+No response body
+
+Actual Response Possibilities:
+1. Positive case: Status 204 No Content (successful deletion)
+2. Missing authentication: Status 401 (Requires authentication)
+3. Insufficient permissions: Status 403 (Forbidden)
+4. Email not found in account: Status 404 (Resource not found)
+5. Invalid request format: Status 422 (Validation failed)
+6. Attempt to delete all emails: Status 422 (Validation failed)
+7. Attempt to delete primary email: Status 422 (Validation failed)
+
+Status: Success

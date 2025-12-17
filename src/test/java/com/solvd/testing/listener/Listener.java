@@ -19,4 +19,6 @@ public class Listener implements ITestListener {
         log.warn("test failed -{}", result.getName());
         // sending those warnings somwhere ofc
     }
+
+
 }

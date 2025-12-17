@@ -1,0 +1,47 @@
+Test Case ID: test_case_add_email_address_for_auth_user_#1
+
+Test Priority: tests successful addition of email addresses
+
+Prerequisites:
+1. The fine-grained token must have "Email addresses" user permissions (write)
+2. User must be authenticated
+3. Email addresses should not already be associated with the account
+
+Test Steps:
+Send POST request to https://api.github.com/user/emails
+Include request body with emails array containing one or more email addresses Example body: {"emails": ["newemail@example.com", "anotheremail@example.com"]}
+
+Expected Result:
+Response status code 201 Created and contains array of added email objects
+
+Response Example:
+[
+  {
+    "email": "octocat@octocat.org",
+    "primary": false,
+    "verified": false,
+    "visibility": "public"
+  },
+  {
+    "email": "octocat@github.com",
+    "primary": false,
+    "verified": false,
+    "visibility": null
+  },
+  {
+    "email": "mona@github.com",
+    "primary": false,
+    "verified": false,
+    "visibility": null
+  }
+]
+
+Actual Response Possibilities:
+1. Positive case: Status 201 with array of added email objects
+2. Missing authentication: Status 401 (Requires authentication)
+3. Insufficient permissions: Status 403 (Forbidden)
+4. Invalid email format: Status 422 (Validation failed)
+5. Already registered email: Status 422 (Validation failed)
+6. Spam detection: Status 422 (Endpoint has been spammed)
+
+Status: Success
