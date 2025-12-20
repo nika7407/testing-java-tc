@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="github endpoint tests" verbose="1">
+
+    <test name="github endpoint tests">
+        <classes>
+            <class name="com.solvd.testing.github.apiClass.Email.DeleteListOfEmailMethod"/>
+            <class name="com.solvd.testing.github.apiClass.Email.GetListOfEmailMethod"/>
+            <class name="com.solvd.testing.github.apiClass.Email.PatchEmailVisibilityMethod"/>
+            <class name="com.solvd.testing.github.apiClass.User.GetUserMethod"/>
+            <class name="com.solvd.testing.github.apiClass.Email.PostListOfEmailMethod"/>
+        </classes>
+    </test>
+
+</suite>

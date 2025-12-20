@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "email": {
+        "type": "string"
+      },
+      "primary": {
+        "type": "boolean"
+      },
+      "verified": {
+        "type": "boolean"
+      },
+      "visibility": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "email",
+      "primary",
+      "verified",
+      "visibility"
+    ]
+  }
+}
