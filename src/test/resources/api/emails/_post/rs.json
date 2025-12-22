@@ -6,24 +6,21 @@
     "visibility": null
   },
   {
-    "email": "type:string",
-    "primary": "type:boolean",
-    "verified": "type:boolean",
+    "email": "type:String",
+    "primary": "type:Boolean",
+    "verified": "type:Boolean",
     "visibility": "skip",
-    "type": "object"
   },
   {
-    "email": "type:string",
-    "primary": "type:boolean",
-    "verified": "type:boolean",
+    "email": "type:String",
+    "primary": "type:Boolean",
+    "verified": "type:Boolean",
     "visibility": "skip",
-    "type": "object"
   },
   {
-    "email": "type:string",
-    "primary": "type:boolean",
-    "verified": "type:boolean",
+    "email": "type:String",
+    "primary": "type:Boolean",
+    "verified": "type:Boolean",
     "visibility": "skip",
-    "type": "object"
   }
 ]

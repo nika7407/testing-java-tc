@@ -56,7 +56,8 @@ public class githubTest {
     public void testPostEmails() {
         PostListOfEmailMethod postListOfEmail = new PostListOfEmailMethod();
         postListOfEmail.callAPIExpectSuccess();
-        postListOfEmail.validateResponseAgainstSchema("api/emails/_post/rs.json");
+        postListOfEmail.validateResponse();
+ //       postListOfEmail.validateResponseAgainstSchema("api/emails/_post/rs.json");
     }
 
     @Test()
@@ -74,7 +75,7 @@ public class githubTest {
         PatchEmailVisibilityMethod patchEmailVisibilityMethod = new PatchEmailVisibilityMethod();
         patchEmailVisibilityMethod.callAPIExpectSuccess();
         patchEmailVisibilityMethod.validateResponse();
-   //     patchEmailVisibilityMethod.validateResponseAgainstSchema("api/emails/_patch/rs.json");
+     //     patchEmailVisibilityMethod.validateResponseAgainstSchema("api/emails/_patch/rs.json");
     }
 
 }

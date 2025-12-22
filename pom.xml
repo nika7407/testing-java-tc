@@ -10,11 +10,13 @@
     <artifactId>testing-java-tc</artifactId>
     <packaging>jar</packaging>
 
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
+        <test.githubSuite></test.githubSuite>
     </properties>
 
     <dependencyManagement>
@@ -87,11 +89,6 @@
                 <version>3.5.4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${test.CoffeeSuite}</suiteXmlFile>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${test.FinantialSuite}</suiteXmlFile>
-                        <!--suppress UnresolvedMavenProperty -->
                         <suiteXmlFile>${test.githubSuite}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
