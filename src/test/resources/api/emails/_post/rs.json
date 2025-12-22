@@ -1,9 +1,29 @@
-
-
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "array",
-  "items": {},
-  "additionalItems": true
-}
-
+[
+  {
+    "email": <#if email1??>"${email1}"</#if>,
+    "primary": false,
+    "verified": false,
+    "visibility": null
+  },
+  {
+    "email": "type:string",
+    "primary": "type:boolean",
+    "verified": "type:boolean",
+    "visibility": "skip",
+    "type": "object"
+  },
+  {
+    "email": "type:string",
+    "primary": "type:boolean",
+    "verified": "type:boolean",
+    "visibility": "skip",
+    "type": "object"
+  },
+  {
+    "email": "type:string",
+    "primary": "type:boolean",
+    "verified": "type:boolean",
+    "visibility": "skip",
+    "type": "object"
+  }
+]

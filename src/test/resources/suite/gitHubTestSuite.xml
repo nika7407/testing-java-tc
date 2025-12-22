@@ -3,11 +3,7 @@
 
     <test name="github endpoint tests">
         <classes>
-            <class name="com.solvd.testing.github.apiClass.Email.DeleteListOfEmailMethod"/>
-            <class name="com.solvd.testing.github.apiClass.Email.GetListOfEmailMethod"/>
-            <class name="com.solvd.testing.github.apiClass.Email.PatchEmailVisibilityMethod"/>
-            <class name="com.solvd.testing.github.apiClass.User.GetUserMethod"/>
-            <class name="com.solvd.testing.github.apiClass.Email.PostListOfEmailMethod"/>
+            <class name="com.solvd.testing.github.githubTest"/>
         </classes>
     </test>
 

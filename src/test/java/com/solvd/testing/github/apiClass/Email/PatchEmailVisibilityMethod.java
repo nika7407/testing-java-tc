@@ -11,6 +11,7 @@ import com.zebrunner.carina.utils.R;
 
 @Endpoint(url = "${config.base_url}/user/email/visibility", methodType = HttpMethodType.PATCH)
 @RequestTemplatePath(path = "api/emails/_patch/rq.json")
+@ResponseTemplatePath(path = "api/emails/_patch/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class PatchEmailVisibilityMethod extends AbstractApiMethodV2 {
 

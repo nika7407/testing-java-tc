@@ -1,136 +1,50 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "GitHub User Response",
-  "type": "object",
-  "properties": {
-    "login": {
-      "type": "string"
-    },
-    "id": {
-      "type": "integer"
-    },
-    "node_id": {
-      "type": "string"
-    },
-    "avatar_url": {
-      "type": "string"
-    },
-    "gravatar_id": {
-      "type": "string"
-    },
-    "url": {
-      "type": "string"
-    },
-    "html_url": {
-      "type": "string"
-    },
-    "followers_url": {
-      "type": "string"
-    },
-    "following_url": {
-      "type": "string"
-    },
-    "gists_url": {
-      "type": "string"
-    },
-    "starred_url": {
-      "type": "string"
-    },
-    "subscriptions_url": {
-      "type": "string"
-    },
-    "organizations_url": {
-      "type": "string"
-    },
-    "repos_url": {
-      "type": "string"
-    },
-    "events_url": {
-      "type": "string"
-    },
-    "received_events_url": {
-      "type": "string"
-    },
-    "type": {
-      "type": "string"
-    },
-    "user_view_type": {
-      "type": "string"
-    },
-    "site_admin": {
-      "type": "boolean"
-    },
-    "name": {
-      "type": "string"
-    },
-    "company": {
-      "type": ["string", "null"]
-    },
-    "blog": {
-      "type": "string"
-    },
-    "location": {
-      "type": ["string", "null"]
-    },
-    "email": {
-      "type": ["string", "null"]
-    },
-    "hireable": {
-      "type": ["boolean", "null"]
-    },
-    "bio": {
-      "type": ["string", "null"]
-    },
-    "twitter_username": {
-      "type": ["string", "null"]
-    },
-    "notification_email": {
-      "type": ["string", "null"]
-    },
-    "public_repos": {
-      "type": "integer"
-    },
-    "public_gists": {
-      "type": "integer"
-    },
-    "followers": {
-      "type": "integer"
-    },
-    "following": {
-      "type": "integer"
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "updated_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "plan": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "space": {
-          "type": "integer"
-        },
-        "collaborators": {
-          "type": "integer"
-        },
-        "private_repos": {
-          "type": "integer"
-        }
-      },
-      "required": ["name", "space", "collaborators", "private_repos"]
-    }
-  },
-  "required": [
-    "login", "id", "node_id", "avatar_url", "gravatar_id", "url", "html_url",
-    "followers_url", "following_url", "gists_url", "starred_url", "subscriptions_url",
-    "organizations_url", "repos_url", "events_url", "received_events_url", "type",
-    "site_admin", "public_repos", "public_gists", "followers", "following",
-    "created_at", "updated_at", "plan"
-  ]
+  "login": "skip",
+  "id": "type:Integer",
+  "node_id": "type:String",
+
+  "avatar_url": "skip",
+  "gravatar_id": "type:String",
+
+  "url": "skip",
+  "html_url": "skip",
+
+  "followers_url": "type:String",
+  "following_url": "type:String",
+  "gists_url": "type:String",
+  "starred_url": "type:String",
+  "subscriptions_url": "type:String",
+  "organizations_url": "type:String",
+  "repos_url": "type:String",
+  "events_url": "type:String",
+  "received_events_url": "type:String",
+
+  "type": "User",
+  "user_view_type": "type:String",
+  "site_admin": "type:Boolean",
+
+  "name": "skip",
+  "company": "skip",
+  "blog": "skip",
+  "location": "skip",
+  "email": "skip",
+  "hireable": "skip",
+  "bio": "skip",
+  "twitter_username": "skip",
+  "notification_email": "skip",
+
+  "public_repos": "type:Integer",
+  "public_gists": "type:Integer",
+  "followers": "type:Integer",
+  "following": "type:Integer",
+
+  "created_at": "type:String",
+  "updated_at": "type:String",
+
+  "plan": {
+    "name": "type:String",
+    "space": "type:Integer",
+    "collaborators": "type:Integer",
+    "private_repos": "type:Integer"
+  }
 }

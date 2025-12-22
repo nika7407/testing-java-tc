@@ -10,6 +10,7 @@ import com.zebrunner.carina.utils.R;
 
 @Endpoint(url = "${config.base_url}/user", methodType = HttpMethodType.GET)
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
+@ResponseTemplatePath(path = "api/users/_get/rs.json")
 public class GetUserMethod extends AbstractApiMethodV2 {
     public GetUserMethod() {
         setHeader("Authorization", R.API.get("GITHUB_TOKEN"));
