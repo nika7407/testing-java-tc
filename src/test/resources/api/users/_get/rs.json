@@ -2,13 +2,10 @@
   "login": "skip",
   "id": "type:Integer",
   "node_id": "type:String",
-
   "avatar_url": "skip",
   "gravatar_id": "type:String",
-
   "url": "skip",
   "html_url": "skip",
-
   "followers_url": "type:String",
   "following_url": "type:String",
   "gists_url": "type:String",
@@ -18,11 +15,9 @@
   "repos_url": "type:String",
   "events_url": "type:String",
   "received_events_url": "type:String",
-
   "type": "User",
   "user_view_type": "type:String",
   "site_admin": "type:Boolean",
-
   "name": "skip",
   "company": "skip",
   "blog": "skip",
@@ -32,15 +27,12 @@
   "bio": "skip",
   "twitter_username": "skip",
   "notification_email": "skip",
-
   "public_repos": "type:Integer",
   "public_gists": "type:Integer",
   "followers": "type:Integer",
   "following": "type:Integer",
-
   "created_at": "type:String",
   "updated_at": "type:String",
-
   "plan": {
     "name": "type:String",
     "space": "type:Integer",

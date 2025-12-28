@@ -1,4 +1,4 @@
-package com.solvd.testing;
+package com.solvd.testing.basictest;
 
 import com.solvd.coffeeplace.CoffeeMachine;
 import org.testng.annotations.BeforeMethod;

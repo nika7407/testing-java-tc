@@ -11,8 +11,6 @@ import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class githubTest {
@@ -24,9 +22,9 @@ public class githubTest {
         PatchEmailVisibilityMethod patchEmailVisibilityMethod =
                 new PatchEmailVisibilityMethod();
         patchEmailVisibilityMethod.setRequestTemplate("api/emails/_patch/rq-private.json");
-        log.info( "request body = " + patchEmailVisibilityMethod.getRequestBody());
+        log.info("request body = " + patchEmailVisibilityMethod.getRequestBody());
 
-       patchEmailVisibilityMethod.callAPI();
+        patchEmailVisibilityMethod.callAPI();
         log.info("email visibility changed");
     }
 
@@ -37,7 +35,7 @@ public class githubTest {
         GetUserMethod getUserMethod = new GetUserMethod();
         getUserMethod.callAPIExpectSuccess();
         getUserMethod.validateResponse();
-     //   getUserMethod.validateResponseAgainstSchema("api/users/_get/rs.json");
+        //   getUserMethod.validateResponseAgainstSchema("api/users/_get/rs.json");
     }
 
     @Test()
@@ -46,8 +44,8 @@ public class githubTest {
     public void testGetEmails() {
         GetListOfEmailMethod getListOfEmailMethod = new GetListOfEmailMethod();
         getListOfEmailMethod.callAPIExpectSuccess();
-      //  getListOfEmailMethod.validateResponse();
-     //  getListOfEmailMethod.validateResponseAgainstSchema("api/emails/_get/rs.json");
+        //  getListOfEmailMethod.validateResponse();
+        //  getListOfEmailMethod.validateResponseAgainstSchema("api/emails/_get/rs.json");
     }
 
     @Test()
@@ -57,7 +55,7 @@ public class githubTest {
         PostListOfEmailMethod postListOfEmail = new PostListOfEmailMethod();
         postListOfEmail.callAPIExpectSuccess();
         postListOfEmail.validateResponse();
- //       postListOfEmail.validateResponseAgainstSchema("api/emails/_post/rs.json");
+        //       postListOfEmail.validateResponseAgainstSchema("api/emails/_post/rs.json");
     }
 
     @Test()
@@ -75,7 +73,7 @@ public class githubTest {
         PatchEmailVisibilityMethod patchEmailVisibilityMethod = new PatchEmailVisibilityMethod();
         patchEmailVisibilityMethod.callAPIExpectSuccess();
         patchEmailVisibilityMethod.validateResponse();
-     //     patchEmailVisibilityMethod.validateResponseAgainstSchema("api/emails/_patch/rs.json");
+        //     patchEmailVisibilityMethod.validateResponseAgainstSchema("api/emails/_patch/rs.json");
     }
 
 }

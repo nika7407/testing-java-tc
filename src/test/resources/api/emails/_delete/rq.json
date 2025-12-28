@@ -1,5 +1,15 @@
 {
   "emails": [
-    <#if email1??>"${email1}"</#if>
+    <
+    #
+    if
+    email1
+    ?
+    ?
+    >
+    "${email1}"
+    </
+    #
+    if>
   ]
 }

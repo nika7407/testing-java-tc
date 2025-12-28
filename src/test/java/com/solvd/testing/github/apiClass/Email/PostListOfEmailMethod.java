@@ -17,8 +17,8 @@ import com.zebrunner.carina.utils.R;
 @SuccessfulHttpStatus(status = HttpResponseStatusType.CREATED_201)
 public class PostListOfEmailMethod extends AbstractApiMethodV2 {
     public PostListOfEmailMethod() {
-      setHeader("Authorization", R.API.get("GITHUB_TOKEN"));
-      setHeader("Accept", "application/vnd.github+json");
+        setHeader("Authorization", R.API.get("GITHUB_TOKEN"));
+        setHeader("Accept", "application/vnd.github+json");
     }
 
 }

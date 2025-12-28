@@ -1,6 +1,6 @@
 package com.solvd.coffeeplace;
 
-public class Checkout {
+public class Checkout<T extends CoffeeMachine> {
 
     private int orderNumber;
     private double total;

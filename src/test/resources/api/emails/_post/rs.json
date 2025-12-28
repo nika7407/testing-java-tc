@@ -1,6 +1,16 @@
 [
   {
-    "email": <#if email1??>"${email1}"</#if>,
+    "email": <
+    #
+    if
+    email1
+    ?
+    ?
+    >
+    "${email1}"
+    </
+    #
+    if>,
     "primary": false,
     "verified": false,
     "visibility": null
@@ -9,18 +19,18 @@
     "email": "type:String",
     "primary": "type:Boolean",
     "verified": "type:Boolean",
-    "visibility": "skip",
+    "visibility": "skip"
   },
   {
     "email": "type:String",
     "primary": "type:Boolean",
     "verified": "type:Boolean",
-    "visibility": "skip",
+    "visibility": "skip"
   },
   {
     "email": "type:String",
     "primary": "type:Boolean",
     "verified": "type:Boolean",
-    "visibility": "skip",
+    "visibility": "skip"
   }
 ]

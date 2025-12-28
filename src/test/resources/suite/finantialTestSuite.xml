@@ -3,8 +3,8 @@
 
     <test name="finantial test suite">
         <classes>
-            <class name="com.solvd.testing.CheckoutTest"/>
-            <class name="com.solvd.testing.CustomerTest"/>
+            <class name="com.solvd.testing.basictest.CheckoutTest"/>
+            <class name="com.solvd.testing.basictest.CustomerTest"/>
         </classes>
     </test>
 

@@ -1,4 +1,4 @@
-package com.solvd.testing;
+package com.solvd.testing.basictest;
 
 import com.solvd.coffeeplace.Customer;
 import org.apache.logging.log4j.LogManager;

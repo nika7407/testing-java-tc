@@ -7,9 +7,9 @@
 
     <test name="coffee shop test suite">
         <classes>
-            <class name="com.solvd.testing.CoffeeStorageTest"/>
-            <class name="com.solvd.testing.CoffeeSupplierTest"/>
-            <class name="com.solvd.testing.CoffeeMachineTest"/>
+            <class name="com.solvd.testing.basictest.CoffeeStorageTest"/>
+            <class name="com.solvd.testing.basictest.CoffeeSupplierTest"/>
+            <class name="com.solvd.testing.basictest.CoffeeMachineTest"/>
         </classes>
     </test>
 
