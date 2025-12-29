@@ -1,6 +1,6 @@
-package com.solvd.testing.web.firstLink.page;
+package com.solvd.testing.web.firstlink.page;
 
-import com.solvd.testing.web.firstLink.uiobject.LoginForm;
+import com.solvd.testing.web.firstlink.uiobject.LoginForm;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;

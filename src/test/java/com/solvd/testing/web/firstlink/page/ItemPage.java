@@ -1,7 +1,7 @@
-package com.solvd.testing.web.firstLink.page;
+package com.solvd.testing.web.firstlink.page;
 
-import com.solvd.testing.web.firstLink.uiobject.AddButton;
-import com.solvd.testing.web.firstLink.uiobject.Headers;
+import com.solvd.testing.web.firstlink.uiobject.AddButton;
+import com.solvd.testing.web.firstlink.uiobject.Headers;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +25,5 @@ public class ItemPage extends AbstractPage {
     public Headers getPageHeader() {
         return pageHeader;
     }
-
 
 }

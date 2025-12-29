@@ -1,6 +1,6 @@
-package com.solvd.testing.web.firstLink.uiobject;
+package com.solvd.testing.web.firstlink.uiobject;
 
-import com.solvd.testing.web.firstLink.page.CheckoutPage;
+import com.solvd.testing.web.firstlink.page.CheckoutPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -20,10 +20,10 @@ public class CheckoutButton extends AbstractUIObject {
         return checkoutButton;
     }
 
-     public CheckoutPage pressCheckoutButton(){
+    public CheckoutPage pressCheckoutButton() {
         checkoutButton.hover();
         checkoutButton.click();
         return new CheckoutPage(driver);
-     }
+    }
 
 }

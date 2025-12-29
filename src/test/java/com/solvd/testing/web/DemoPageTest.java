@@ -1,9 +1,9 @@
 package com.solvd.testing.web;
 
-import com.solvd.testing.web.firstLink.page.CartPage;
-import com.solvd.testing.web.firstLink.page.CheckoutPage;
-import com.solvd.testing.web.firstLink.page.ItemPage;
-import com.solvd.testing.web.firstLink.page.MainPage;
+import com.solvd.testing.web.firstlink.page.CartPage;
+import com.solvd.testing.web.firstlink.page.CheckoutPage;
+import com.solvd.testing.web.firstlink.page.ItemPage;
+import com.solvd.testing.web.firstlink.page.MainPage;
 import com.zebrunner.carina.core.AbstractTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +13,6 @@ import org.testng.asserts.SoftAssert;
 public class DemoPageTest extends AbstractTest {
 
     private static final Logger log = LogManager.getLogger(DemoPageTest.class);
-
 
     @Test(description = "test check adding singular item into cart, veryfying and going to the purchase page")
     public void testAddingSingleObject() throws InterruptedException {
@@ -30,20 +29,19 @@ public class DemoPageTest extends AbstractTest {
         Thread.sleep(2000);
         CartPage cartPage = itemPage.getPageHeader().pressCheckout();
 
-        String cartProductName = cartPage.getCartPageItem().getSingleItemInCart().toLowerCase();
+        String cartProductName = cartPage.getCartPageItem().getSingleItemInCart();
         Double cartProductCost = cartPage.getCartPageItem().getCurrentTotal();
 
-
-        softAssert.assertEquals(cartProductName, productName);
-        softAssert.assertEquals(cartProductCost, productCost);
+        softAssert.assertEquals(cartProductName, productName, "Cart name is incorrect");
+        softAssert.assertEquals(cartProductCost, productCost, "Cart cost is incorrect");
 
         CheckoutPage checkoutPage = cartPage.getCheckoutButton().pressCheckoutButton();
 
         String checkoutItem = checkoutPage.getCheckoutInfo().getSingleItemName().toLowerCase();
-        Double checkoutItemsTotal = checkoutPage.getCheckoutInfo().getCheckoutTotal();
+        Double checkoutItemsTotal = checkoutPage.getCheckoutPageTotal().getCheckoutTotal();
 
-        softAssert.assertEquals(productName, checkoutItem);
-        softAssert.assertEquals(productCost, checkoutItemsTotal);
+        softAssert.assertEquals(productName, checkoutItem, "Checkout name is incorrect");
+        softAssert.assertEquals(productCost, checkoutItemsTotal, "Checkout total is incorrect");
         softAssert.assertAll();
     }
 
@@ -65,45 +63,24 @@ public class DemoPageTest extends AbstractTest {
         }
         Double shouldBeCost = productCost * amountToAdd;
 
-
         Thread.sleep(2000);
         CartPage cartPage = itemPage.getPageHeader().pressCheckout();
 
         String cartProductName = cartPage.getCartPageItem().getSingleItemInCart().toLowerCase();
         Double cartProductCost = cartPage.getCartPageItem().getCurrentTotal();
 
+        softAssert.assertEquals(cartProductName, productName, "Cart name is incorrect");
+        softAssert.assertEquals(shouldBeCost, cartProductCost, "Cart total is incorrect");
 
-        softAssert.assertEquals(cartProductName, productName);
-        softAssert.assertEquals(shouldBeCost, cartProductCost);
         CheckoutPage checkoutPage = cartPage.getCheckoutButton().pressCheckoutButton();
 
         String checkoutItem = checkoutPage.getCheckoutInfo().getSingleItemName().toLowerCase();
-        Double checkoutItemsTotal = checkoutPage.getCheckoutInfo().getCheckoutTotal();
+        Double checkoutItemsTotal = checkoutPage.getCheckoutPageTotal().getCheckoutTotal();
 
-
-        softAssert.assertEquals(productName, checkoutItem);
-        softAssert.assertEquals(shouldBeCost, checkoutItemsTotal);
+        softAssert.assertEquals(productName, checkoutItem, "Checkout name is incorrect");
+        softAssert.assertEquals(shouldBeCost, checkoutItemsTotal, "Checkout total is incorrect");
         softAssert.assertAll();
     }
-
-//    @Test(description = "test login with correct credential")
-//    public void testLogin() throws InterruptedException {
-//        MainPage mainPage = new MainPage(getDriver());
-//        mainPage.open();
-//        Thread.sleep(3060);
-//        SoftAssert softAssert = new SoftAssert();
-//        Thread.sleep(3060);
-//        LoginPage loginPage = mainPage.getLoginButton().pressLogin();
-//        Thread.sleep(3060);
-//        loginPage.getLoginForm().inputEmail(R.TESTDATA.get("test_user_email"));
-//        Thread.sleep(3080);
-//        loginPage.getLoginForm().inputPassword(R.TESTDATA.get("test_user_password"));
-//        Thread.sleep(3040);
-//        UserPage userPage = loginPage.getLoginForm().pressLogin();
-//        Thread.sleep(3060);
-//        softAssert.assertEquals(userPage.isPageOpened(), true);
-//        softAssert.assertEquals(userPage.getUserName().getText() != null, true);
-//    }
 
     @Test(description = "test left sidebar links navigation")
     public void testSidebarLinks() throws InterruptedException {
@@ -111,20 +88,16 @@ public class DemoPageTest extends AbstractTest {
         MainPage mainPage = new MainPage(getDriver());
         mainPage.open();
 
-
         mainPage.getSidebarLinks().clickAboutUsLink();
-        softAssert.assertEquals(getDriver().getCurrentUrl().contains("about-us"), true);
+        softAssert.assertEquals(getDriver().getCurrentUrl().contains("about-us"), true, "About page is not opened");
         getDriver().navigate().back();
 
-
         mainPage.getSidebarLinks().clickCatalogLink();
-        softAssert.assertEquals(getDriver().getCurrentUrl().contains("/collections/all"), true);
+        softAssert.assertEquals(getDriver().getCurrentUrl().contains("/collections/all"), true, "Catalog page is not opened");
         getDriver().navigate().back();
 
         mainPage.getSidebarLinks().clickBlogLink();
-        softAssert.assertEquals(getDriver().getCurrentUrl().contains("blogs"), true);
+        softAssert.assertEquals(getDriver().getCurrentUrl().contains("blogs"), true, "Blog page is not opened");
         softAssert.assertAll();
     }
-
-
 }

@@ -8,51 +8,36 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class CartList extends AbstractUIObject {
 
-    @FindBy(xpath = ".//div[3]")
-    private ExtendedWebElement cartItem1;
+    @FindBy(xpath = ".//*[contains(@class, 'cart_item')]")
+    private List<ExtendedWebElement> cartItems;
 
-    @FindBy(xpath = ".//div[4]")
-    private ExtendedWebElement cartItem2;
-
-    @FindBy(xpath = "//button[@id='checkout']")
+    @FindBy(xpath = ".//*[@data-test='checkout']")
     private ExtendedWebElement checkoutButton;
-
 
     public CartList(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 
-    public ExtendedWebElement getCartItem1() {
-        return cartItem1;
+    private ExtendedWebElement getItem(int index) {
+        return cartItems.get(index);
     }
 
-    public ExtendedWebElement getCartItem2() {
-        return cartItem2;
+    public String getItemName(int index) {
+        return getItem(index).findElement(By.xpath(".//*[contains(@class, 'inventory_item_name')]")).getText().toLowerCase();
     }
 
-    public String getItem1Name() {
-        return getCartItem1().findElement(By.className("inventory_item_name")).getText().toLowerCase();
+    public Double getItemCost(int index) {
+        return Double.valueOf(
+                getItem(index).findElement(By.xpath(".//*[contains(@class, 'inventory_item_price')]")).getText().substring(1)
+        );
     }
 
-    public String getItem2Name() {
-        return getCartItem2().findElement(By.className("inventory_item_name")).getText().toLowerCase();
-    }
-
-    public Double getItem1Cost() {
-        return Double.valueOf(getCartItem1().findElement(By.className("inventory_item_price")).getText().substring(1));
-    }
-
-    public Double getItem2Cost() {
-        return Double.valueOf(getCartItem2().findElement(By.className("inventory_item_price")).getText().substring(1));
-    }
-    public CheckoutPage pressCheckout(){
-        checkoutButton.hover();
+    public CheckoutPage pressCheckout() {
         checkoutButton.click();
         return new CheckoutPage(getDriver());
     }
-
-
-
 }

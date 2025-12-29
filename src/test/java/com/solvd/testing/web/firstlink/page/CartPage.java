@@ -1,17 +1,17 @@
-package com.solvd.testing.web.firstLink.page;
+package com.solvd.testing.web.firstlink.page;
 
-import com.solvd.testing.web.firstLink.uiobject.CartPageItem;
-import com.solvd.testing.web.firstLink.uiobject.CheckoutButton;
+import com.solvd.testing.web.firstlink.uiobject.CartPageItem;
+import com.solvd.testing.web.firstlink.uiobject.CheckoutButton;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class CartPage extends AbstractPage {
 
-    @FindBy(xpath = "//div[contains(@class, 'omega') and contains(@class,'alpha') and contains(@class,'column') and contains(@class,'twelve')]/div[contains(@class, 'row')]")
+    @FindBy(xpath = "//*[contains(@class, 'omega') and contains(@class,'alpha') and contains(@class,'column') and contains(@class,'twelve')]//*[contains(@class, 'row')]")
     private CartPageItem cartPageItem;
 
-    @FindBy(xpath = "//div[@class='six columns omega actions']")
+    @FindBy(xpath = "//*[contains(@class, 'six') and contains(@class, 'columns') and contains(@class, 'omega') and contains(@class, 'actions')]")
     private CheckoutButton checkoutButton;
 
     public CartPage(WebDriver driver) {

@@ -1,6 +1,6 @@
-package com.solvd.testing.web.firstLink.uiobject;
+package com.solvd.testing.web.firstlink.uiobject;
 
-import com.solvd.testing.web.firstLink.page.UserPage;
+import com.solvd.testing.web.firstlink.page.UserPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -9,13 +9,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginForm extends AbstractUIObject {
 
-    @FindBy(xpath = ".//input[contains (@id, 'customer_email')]")
+    @FindBy(xpath = ".//*[contains (@id, 'customer_email')]")
     private ExtendedWebElement emailInput;
 
-    @FindBy(xpath = ".//input[contains (@id, 'customer_password')]")
+    @FindBy(xpath = ".//*[contains (@id, 'customer_password')]")
     private ExtendedWebElement passwordInput;
 
-    @FindBy(xpath = ".//input[contains (@class, 'button')]")
+    @FindBy(xpath = ".//*[contains (@class, 'button')]")
     private ExtendedWebElement LoginButton;
 
     public LoginForm(WebDriver driver, SearchContext searchContext) {

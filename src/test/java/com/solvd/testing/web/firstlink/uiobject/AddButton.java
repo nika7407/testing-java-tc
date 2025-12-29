@@ -1,4 +1,4 @@
-package com.solvd.testing.web.firstLink.uiobject;
+package com.solvd.testing.web.firstlink.uiobject;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AddButton extends AbstractUIObject {
 
-    @FindBy(xpath = ".//input[contains(@id,'add')]")
+    @FindBy(xpath = ".//*[contains(@id,'add')]")
     private ExtendedWebElement addToCartButton;
 
     public AddButton(WebDriver driver, SearchContext searchContext) {
@@ -19,7 +19,7 @@ public class AddButton extends AbstractUIObject {
         return addToCartButton;
     }
 
-    public void pressAddToCartButton(){
+    public void pressAddToCartButton() {
         getAddToCartButton().click();
     }
 }

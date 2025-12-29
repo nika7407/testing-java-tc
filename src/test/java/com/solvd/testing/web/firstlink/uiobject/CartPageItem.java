@@ -1,18 +1,17 @@
-package com.solvd.testing.web.firstLink.uiobject;
+package com.solvd.testing.web.firstlink.uiobject;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
-import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class CartPageItem extends AbstractUIObject {
 
-    @FindBy(xpath = ".//div[1]/div/h3/a")
+    @FindBy(xpath = ".//*[contains(@class, 'description')]")
     private ExtendedWebElement itemDescription;
 
-    @FindBy(xpath = ".//div[4]/span")
+    @FindBy(xpath = ".//*[contains (@class, 'total')]//span")
     private ExtendedWebElement cartTotalCost;
 
     public CartPageItem(WebDriver driver, SearchContext searchContext) {
@@ -27,12 +26,12 @@ public class CartPageItem extends AbstractUIObject {
         return cartTotalCost;
     }
 
-    public double getCurrentTotal(){
-       return Double.parseDouble(getCartTotalCost().getText().substring(1));
+    public double getCurrentTotal() {
+        return Double.parseDouble(getCartTotalCost().getText().substring(1));
     }
 
-    public String getSingleItemInCart(){
+    public String getSingleItemInCart() {
         String fullText = getItemDescription().getText();
-        return fullText.replaceFirst("\\s*-\\s*.*$", "").trim();
+        return fullText.substring(0, 11).trim().toLowerCase();
     }
 }

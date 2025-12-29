@@ -1,4 +1,4 @@
-package com.solvd.testing.web.firstLink.uiobject;
+package com.solvd.testing.web.firstlink.uiobject;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
@@ -8,11 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class CheckoutInfo extends AbstractUIObject {
 
-    @FindBy(xpath = ".//aside/div/section/div/div[1]/section/section/div[1]/div[2]/div[2]/div/div[3]/div/p")
+    @FindBy(xpath = "(.//p)[1]")
     private ExtendedWebElement ItemName;
-
-    @FindBy(xpath = ".//aside/div/section/div/section/div[2]/div[2]/div[3]/div[2]/div/strong")
-    private ExtendedWebElement itemsTotal;
 
     public CheckoutInfo(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
@@ -22,15 +19,7 @@ public class CheckoutInfo extends AbstractUIObject {
         return ItemName;
     }
 
-    public ExtendedWebElement getItemsTotal() {
-        return itemsTotal;
-    }
-
-    public Double getCheckoutTotal(){
-       return Double.parseDouble(getItemsTotal().getText().substring(1));
-    }
-
-    public String getSingleItemName(){
+    public String getSingleItemName() {
         return ItemName.getText().toLowerCase();
     }
 

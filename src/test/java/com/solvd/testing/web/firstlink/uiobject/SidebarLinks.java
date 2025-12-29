@@ -1,4 +1,4 @@
-package com.solvd.testing.web.firstLink.uiobject;
+package com.solvd.testing.web.firstlink.uiobject;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
@@ -8,13 +8,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class SidebarLinks extends AbstractUIObject {
 
-    @FindBy(xpath = ".//a[contains(text(),'About Us')]")
+    @FindBy(xpath = ".//*[contains(text(),'About Us')]")
     private ExtendedWebElement aboutUs;
 
-    @FindBy(xpath = ".//a[contains(text(),'Catalog')]")
+    @FindBy(xpath = ".//*[contains(text(),'Catalog')]")
     private ExtendedWebElement catalog;
 
-    @FindBy(xpath = ".//a[contains(text(),'Blog')]")
+    @FindBy(xpath = ".//*[contains(text(),'Blog')]")
     private ExtendedWebElement blog;
 
     public SidebarLinks(WebDriver driver, SearchContext searchContext) {
@@ -33,17 +33,17 @@ public class SidebarLinks extends AbstractUIObject {
         return blog;
     }
 
-    public void clickAboutUsLink(){
+    public void clickAboutUsLink() {
         getAboutUs().hover();
         getAboutUs().click();
     }
 
-    public void clickCatalogLink(){
+    public void clickCatalogLink() {
         getCatalogLink().hover();
         getCatalogLink().click();
     }
 
-    public void clickBlogLink(){
+    public void clickBlogLink() {
         getBlogLink().hover();
         getBlogLink().click();
     }

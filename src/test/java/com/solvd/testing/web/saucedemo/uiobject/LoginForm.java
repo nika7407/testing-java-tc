@@ -1,7 +1,6 @@
 package com.solvd.testing.web.saucedemo.uiobject;
 
 import com.solvd.testing.web.saucedemo.page.MainPage;
-import com.zebrunner.carina.utils.R;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -35,7 +34,5 @@ public class LoginForm extends AbstractUIObject {
         loginButton.click();
         return new MainPage(driver);
     }
-
-
 
 }

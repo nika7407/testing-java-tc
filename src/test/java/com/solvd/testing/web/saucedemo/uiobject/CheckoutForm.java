@@ -51,7 +51,7 @@ public class CheckoutForm extends AbstractUIObject {
         inputPostalCode.type(postalCode);
     }
 
-    public void pressCheckoutButton(){
+    public void pressCheckoutButton() {
         checkoutButton.hover();
         checkoutButton.click();
     }
