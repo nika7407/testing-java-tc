@@ -1,12 +1,12 @@
 package com.solvd.testing.web;
 
-import com.solvd.testing.web.saucedemo.page.CartPage;
-import com.solvd.testing.web.saucedemo.page.CheckoutPage;
-import com.solvd.testing.web.saucedemo.page.LoginPage;
-import com.solvd.testing.web.saucedemo.page.MainPage;
-import com.solvd.testing.web.saucedemo.uiobject.CartList;
-import com.solvd.testing.web.saucedemo.uiobject.CheckoutForm;
-import com.solvd.testing.web.saucedemo.uiobject.InventoryList;
+import com.solvd.web.saucedemo.page.CartPage;
+import com.solvd.web.saucedemo.page.CheckoutPage;
+import com.solvd.web.saucedemo.page.LoginPage;
+import com.solvd.web.saucedemo.page.MainPage;
+import com.solvd.web.saucedemo.uiobject.CartList;
+import com.solvd.web.saucedemo.uiobject.CheckoutForm;
+import com.solvd.web.saucedemo.uiobject.InventoryList;
 import com.zebrunner.carina.core.AbstractTest;
 import com.zebrunner.carina.utils.R;
 import org.openqa.selenium.By;

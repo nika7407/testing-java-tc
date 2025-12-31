@@ -1,11 +1,11 @@
 package com.solvd.testing.github;
 
 
-import com.solvd.testing.github.apiClass.Email.DeleteListOfEmailMethod;
-import com.solvd.testing.github.apiClass.Email.GetListOfEmailMethod;
-import com.solvd.testing.github.apiClass.Email.PatchEmailVisibilityMethod;
-import com.solvd.testing.github.apiClass.Email.PostListOfEmailMethod;
-import com.solvd.testing.github.apiClass.User.GetUserMethod;
+import com.solvd.github.apiclass.email.DeleteListOfEmailMethod;
+import com.solvd.github.apiclass.email.GetListOfEmailMethod;
+import com.solvd.github.apiclass.email.PatchEmailVisibilityMethod;
+import com.solvd.github.apiclass.email.PostListOfEmailMethod;
+import com.solvd.github.apiclass.user.GetUserMethod;
 import com.zebrunner.agent.core.annotation.Priority;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import org.apache.logging.log4j.LogManager;

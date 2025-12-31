@@ -1,9 +1,9 @@
 package com.solvd.testing.web;
 
-import com.solvd.testing.web.firstlink.page.CartPage;
-import com.solvd.testing.web.firstlink.page.CheckoutPage;
-import com.solvd.testing.web.firstlink.page.ItemPage;
-import com.solvd.testing.web.firstlink.page.MainPage;
+import com.solvd.web.firstlink.page.CartPage;
+import com.solvd.web.firstlink.page.CheckoutPage;
+import com.solvd.web.firstlink.page.ItemPage;
+import com.solvd.web.firstlink.page.MainPage;
 import com.zebrunner.carina.core.AbstractTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
